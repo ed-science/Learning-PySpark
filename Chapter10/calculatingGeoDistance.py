@@ -24,8 +24,10 @@ def geoEncode(spark):
             )
         )
 
-    convertMiles = func.udf(lambda m: 
-        metricImperial.convert(str(m) + ' mile', 'km'))
+    convertMiles = func.udf(
+        lambda m: metricImperial.convert(f'{str(m)} mile', 'km')
+    )
+
 
     # create new columns
     uber = uber.withColumn(

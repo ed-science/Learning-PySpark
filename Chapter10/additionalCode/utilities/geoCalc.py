@@ -27,9 +27,7 @@ class geoCalc(object):
             math.cos(lat1_radians) * \
             math.cos(lat2_radians) 
 
-        dist = 2 * R * math.asin(math.sqrt(hav)) 
-
-        return dist
+        return 2 * R * math.asin(math.sqrt(hav))
 
 if __name__ == '__main__':
     p1 = {'address': '301 S Jackson St, Seattle, WA 98104',

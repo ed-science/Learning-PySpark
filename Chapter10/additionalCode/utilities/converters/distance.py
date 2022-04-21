@@ -24,13 +24,13 @@ class metricImperial(BaseConverter):
         f_val, f_unit = f.split(' ')
         f_val = float(f_val)
 
-        if f_unit in conversionTable.keys():
+        if f_unit in conversionTable:
             if t in conversionTable[f_unit].keys():
                 conv = 1 / conversionTable[f_unit][t]
             else:
                 raise KeyError('Key {0} not found...' \
                     .format(t))
-        elif t in conversionTable.keys():
+        elif t in conversionTable:
             if f_unit in conversionTable[t].keys():
                 conv = conversionTable[t][f_unit]
             else:
